@@ -1,0 +1,10 @@
+<ul *ngIf="customers" class="fixedList">
+  <li *ngFor="let customer of customers">   
+      <div class="gridCustomerItem">
+        <div class="rank">{{ customer.rank }}</div>
+        <div class="name">{{ customer.firstName }} {{ customer.lastName }}</div>
+        <div class="level{{ customer.level }}">&nbsp;</div>
+        <div class="points">{{ customer.points | number}}</div>
+      </div>    
+  </li>
+</ul>
