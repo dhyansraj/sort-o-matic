@@ -1,0 +1,84 @@
+.title{
+    background: #576889;
+    line-height: 2.5em;
+    color: #E5E5E5;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+}
+
+.podium{
+    background: #7094CA;
+    display: grid;
+    grid-template-columns: 10% 10% 30% 30% 10% 10%;
+    grid-template-rows: 5;
+    height: 14em;
+}
+
+.blank_row {
+    grid-column: auto/ span 6;
+    line-height: 2em;
+    color: #66FFDA;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5em;
+}
+
+.trophy_row {
+    grid-column: auto / span 6;
+    background-image: url("../../assets/trophy_gold.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 4em;
+}
+
+.first_row_blank {
+    grid-column: auto / span 2;
+}
+
+.first_row_step {
+    grid-column: auto / span 2;
+    line-height: 2.5em;
+    background-color: #E5E5E5;
+    box-shadow: 4px 4px 4px grey;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.second_row_blank {
+    height: 1em;
+}
+
+.second_row_silver {
+    grid-column: auto / span 2;
+    background-color: #C4BFBF;
+    box-shadow: 4px 4px 4px grey;
+}
+
+.second_row_gold {
+    grid-column: auto / span 2;
+    background-color: #FFD362;
+    box-shadow: 4px 4px 4px grey;
+}
+
+.avgContainer {
+    line-height: 15em;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #7094CA;
+    height: 17em;
+    padding-top: 1em;
+}
+.avgPoint{
+    line-height: 4.5em;
+    width: 4.5em;
+    background-color: #FFD362;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 4px 4px 4px grey;
+    text-align: center;
+    vertical-align: middle;
+    color: #6A84B8;    
+    font-size: 3em;
+}

@@ -1,3 +1,18 @@
-<p>
-  trophy works!
-</p>
+<div class="title">Highest Point</div>
+<div class="podium" *ngIf="trophy">
+  <div class="blank_row">{{ trophy.points | number }}</div>
+  <div class="trophy_row">&nbsp;</div>
+  <div class="first_row_blank">&nbsp;</div>
+  <div class="first_row_step">{{ trophy.firstName }} {{ trophy.lastName }}</div>
+  <div class="first_row_blank">&nbsp;</div>
+  <div class="second_row_blank">&nbsp;</div>
+  <div class="second_row_silver">&nbsp;</div>
+  <div class="second_row_gold">&nbsp;</div>
+  <div class="second_row_blank">&nbsp;</div>
+  <div class="blank_row">&nbsp;</div>
+</div>
+<div class="title">Average Point</div>
+<div class="avgContainer">
+    <div *ngIf="avg" class="avgPoint">{{avg.avg | number}}</div>
+</div>
+

@@ -11,4 +11,13 @@ export class DataService {
   getCutomers() {
     return this.http.get('http://localhost:8000/customers.json');
   }
+
+  getTrophy() {
+    return this.http.get('http://localhost:8000/trophy.json');
+  }
+
+  getAvg() {
+    return this.http.get('http://localhost:8000/avg.json');
+  }
+
 }

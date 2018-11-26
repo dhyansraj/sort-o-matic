@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-trophy',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrophyComponent implements OnInit {
 
-  constructor() { }
+  trophy : Object;
+  avg: Object;
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.getTrophy().subscribe(data => {
+      this.trophy = data;
+    });
+
+    this.data.getAvg().subscribe(data => {
+      this.avg = data;
+    })
   }
 
 }
