@@ -1,5 +1,5 @@
-<div class="category">
-  <div class="arrow" (click)="platinumArrowClicked()" 
+<div class="category" (click)="platinumArrowClicked()">
+  <div class="arrow"  
     [ngClass]="{
       'platinum-arrow-expanded' : platinum_arrow,
       'platinum-arrow-collapsed' : !platinum_arrow
@@ -16,8 +16,8 @@
       </div>    
   </li>
 </ul>
-<div class="category">
-    <div class="arrow" (click)="goldArrowClicked()" 
+<div class="category" (click)="goldArrowClicked()">
+    <div class="arrow"  
       [ngClass]="{
         'gold-arrow-expanded' : gold_arrow,
         'gold-arrow-collapsed' : !gold_arrow
@@ -34,8 +34,8 @@
         </div>    
     </li>
   </ul>
-  <div class="category">
-      <div class="arrow" (click)="silverArrowClicked()" 
+  <div class="category" (click)="silverArrowClicked()">
+      <div class="arrow"  
         [ngClass]="{
           'silver-arrow-expanded' : silver_arrow,
           'silver-arrow-collapsed' : !silver_arrow
