@@ -20,4 +20,7 @@ export class DataService {
     return this.http.get('http://localhost:8000/avg.json');
   }
 
+  search(name) {
+    return this.http.get('http://localhost:8000/search/' + name);
+  }
 }

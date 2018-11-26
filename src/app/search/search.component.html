@@ -1,3 +1,42 @@
-<p>
-  search works!
-</p>
+<div class="title">Search Customers</div>
+<div class="searchArea">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <div class="searchContainer">    
+      <div class="blank_row">&nbsp;</div>
+      <div class="search"><input type="text" class="searchBox" formControlName="name"></div>      
+      <input type="reset" value="Reset" class="reset">
+      <input type="submit" value="Search" class="submit">
+      
+      <div *ngIf="submitted && searchForm.controls.name.errors; else blankRow" class="error">
+          <div *ngIf="searchForm.controls.name.errors.required">Please enter a name to search</div>
+      </div>   
+      <ng-template #blankRow>
+          <div class="blank_row">&nbsp;</div>
+      </ng-template> 
+  </div>
+</form>
+</div>
+<div class="singleCustomer" *ngIf="submitted && results && results.length == 1">
+  <div class="singleCustomerM">Customer Found !</div>
+  <div class="singleCustomerN">{{results[0].firstName}} {{results[0].lastName}}</div>
+  <div class="level level{{results[0].level}}">&nbsp;</div>
+  <div class="singleCustomerP">{{results[0].points | number}}</div>
+</div>
+
+<div class="multileCustomers" *ngIf="submitted && results && results.length > 1">
+  <div class="multileCustomersM">Duplicate Records Found !</div>
+  <ul class="fixedList">
+      <li *ngFor="let customer of results">   
+          <div class="gridCustomerItem">
+            <div class="rank">{{ customer.rank }}</div>
+            <div class="name">{{ customer.firstName }} {{ customer.lastName }}</div>
+            <div class="mlevel{{ customer.level }}">&nbsp;</div>
+            <div class="points">{{ customer.points | number}}</div>
+          </div>    
+      </li>
+    </ul>
+</div>
+
+<div class="error" *ngIf="submitted && !searchForm.controls.name.errors && !results">
+    No customers found !
+  </div>
