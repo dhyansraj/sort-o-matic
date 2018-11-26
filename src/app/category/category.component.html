@@ -1,3 +1,55 @@
-<p>
-  category works!
-</p>
+<div class="category">
+  <div class="arrow" (click)="platinumArrowClicked()" 
+    [ngClass]="{
+      'platinum-arrow-expanded' : platinum_arrow,
+      'platinum-arrow-collapsed' : !platinum_arrow
+    }">&nbsp;</div>
+  <div class="categoryName">Platinum Customers</div>  
+</div>
+<ul *ngIf="platinum_arrow" class="fixedList">
+  <li *ngFor="let customer of customers">   
+      <div class="gridCustomerItem">
+        <div class="rank">{{ customer.rank }}</div>
+        <div class="name">{{ customer.firstName }} {{ customer.lastName }}</div>
+        <div class="level{{ customer.level }}">&nbsp;</div>
+        <div class="points">{{ customer.points | number}}</div>
+      </div>    
+  </li>
+</ul>
+<div class="category">
+    <div class="arrow" (click)="goldArrowClicked()" 
+      [ngClass]="{
+        'gold-arrow-expanded' : gold_arrow,
+        'gold-arrow-collapsed' : !gold_arrow
+      }">&nbsp;</div>
+    <div class="categoryName">Gold Customers</div>  
+  </div>
+  <ul *ngIf="gold_arrow" class="fixedList">
+    <li *ngFor="let customer of customers">   
+        <div class="gridCustomerItem">
+          <div class="rank">{{ customer.rank }}</div>
+          <div class="name">{{ customer.firstName }} {{ customer.lastName }}</div>
+          <div class="level{{ customer.level }}">&nbsp;</div>
+          <div class="points">{{ customer.points | number}}</div>
+        </div>    
+    </li>
+  </ul>
+  <div class="category">
+      <div class="arrow" (click)="silverArrowClicked()" 
+        [ngClass]="{
+          'silver-arrow-expanded' : silver_arrow,
+          'silver-arrow-collapsed' : !silver_arrow
+        }">&nbsp;</div>
+      <div class="categoryName">Silver Customers</div>  
+    </div>
+    <ul *ngIf="silver_arrow" class="fixedList">
+      <li *ngFor="let customer of customers">   
+          <div class="gridCustomerItem">
+            <div class="rank">{{ customer.rank }}</div>
+            <div class="name">{{ customer.firstName }} {{ customer.lastName }}</div>
+            <div class="level{{ customer.level }}">&nbsp;</div>
+            <div class="points">{{ customer.points | number}}</div>
+          </div>    
+      </li>
+    </ul>
+  
