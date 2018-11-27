@@ -24,6 +24,7 @@ export class SearchComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.results = null;
 
     if (this.searchForm.invalid) {
       return;
