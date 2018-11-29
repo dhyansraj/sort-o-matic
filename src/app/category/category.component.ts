@@ -18,7 +18,7 @@ export class CategoryComponent implements OnInit {
   constructor(private data: DataService) { }
 
   ngOnInit() {
-    this.data.getCutomers().subscribe(data => {
+    this.data.getCutomersByLevel('platinum').subscribe(data => {
       this.customers = data;
       console.log(data);
     });
@@ -28,12 +28,21 @@ export class CategoryComponent implements OnInit {
     this.platinum_arrow = !this.platinum_arrow;
     this.gold_arrow = false;
     this.silver_arrow = false;
+
+    this.data.getCutomersByLevel('platinum').subscribe(data => {
+      this.customers = data;
+      console.log(data);
+    });
   }
 
   goldArrowClicked(){
     this.gold_arrow = !this.gold_arrow;
     this.platinum_arrow = false;
     this.silver_arrow = false;
+    this.data.getCutomersByLevel('gold').subscribe(data => {
+      this.customers = data;
+      console.log(data);
+    });
 
   }
 
@@ -41,6 +50,11 @@ export class CategoryComponent implements OnInit {
     this.silver_arrow = !this.silver_arrow;
     this.platinum_arrow = false;
     this.gold_arrow = false;
+
+    this.data.getCutomersByLevel('silver').subscribe(data => {
+      this.customers = data;
+      console.log(data);
+    });
   }
 
 }

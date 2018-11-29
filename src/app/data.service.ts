@@ -9,18 +9,22 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   getCutomers() {
-    return this.http.get('http://localhost:8000/customers.json');
+    return this.http.get('http://localhost:8000/sortomatic/customers');
+  }
+
+  getCutomersByLevel(level) {
+    return this.http.get('http://localhost:8000/sortomatic/customers/' + level);
   }
 
   getTrophy() {
-    return this.http.get('http://localhost:8000/trophy.json');
+    return this.http.get('http://localhost:8000/sortomatic/highest-customer');
   }
 
   getAvg() {
-    return this.http.get('http://localhost:8000/avg.json');
+    return this.http.get('http://localhost:8000/sortomatic/average-point');
   }
 
   search(name) {
-    return this.http.get('http://localhost:8000/search/' + name);
+    return this.http.get('http://localhost:8000/sortomatic/search/' + name);
   }
 }
